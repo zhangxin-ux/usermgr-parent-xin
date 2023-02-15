@@ -8,5 +8,6 @@ package com.xin.branch;
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("aaaaaaaaaaaa");
+        System.out.println("mybranch add bbbbb");
     }
 }

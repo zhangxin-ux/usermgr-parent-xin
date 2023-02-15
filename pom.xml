@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xin.usermgr</groupId>
+    <artifactId>usermgr-parent-xin</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>usermgr-dao-xin</module>
+        <module>usermgr-service-xin</module>
+        <module>usermgr-common-xin</module>
+        <module>usermgr-controller-xin</module>
+    </modules>
+
+    <properties>
+        <spring.version>4.3.11.RELEASE</spring.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>2.1</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>usermgr-parent</finalName>
+        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+            <plugins>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>3.1.0</version>
+                </plugin>
+                <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.0.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <locales>zh_CN</locales>
+                        <outputEncoding>UTF-8</outputEncoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>1.0-beta-7</version>
+            </extension>
+        </extensions>
+    </build>
+
+    <distributionManagement>
+        <site>
+            <id>tomcatserver</id>
+            <url>dav:http://192.168.223.129:8080/webdav</url>
+        </site>
+    </distributionManagement>
+
+    <!--其它配置信息-->
+    <url>http://www.xxxx.com</url>
+    <!--描述信息-->
+    <description>description of usermgr</description>
+    <!--版本控制信息-->
+    <scm>
+        <connection>scm:git:http://gitlab.corp.bjpowernode.com/mobile_hotel_res/phone_spider_project</connection>
+        <developerConnection>scm:git:git@gitlab.corp.xxxx.com:mobile_hotel_res/phone_spider_project.git</developerConnection>
+        <url>http://gitlab.corp.xxxx.com/mobile_hotel_res/phone_spider_project</url>
+    </scm>
+    <!--持续集成信息-->
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>http://ci.xxxx.com/phoneproject</url>
+    </ciManagement>
+    <!--开发人员信息-->
+    <developers>
+        <developer>
+            <id>bruceyang</id>
+            <name>bruce.yang</name>
+            <email>bruceyang@bjpowernode.com</email>
+            <timezone>8</timezone>
+        </developer>
+    </developers>
+    <!--问题解决信息-->
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://jira.xxxx.com/phoneproject</url>
+    </issueManagement>
+    <!--许可证 -->
+    <licenses>
+        <license>
+            <url>http://127.0.0.1:8080</url>
+            <comments>评论</comments>
+            <name>完全开源</name>
+        </license>
+    </licenses>
+
+
+</project>
